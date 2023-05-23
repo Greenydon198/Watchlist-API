@@ -56,10 +56,13 @@ public class MovieRepository {
 
     public ResponseEntity<String> dltDirector(String d) {
         for(String m:D_M.get(d)){
-            Movies.remove(m);
+            if(Movies.containsKey(m))
+                Movies.remove(m);
         }
-        Directors.remove(d);
-        D_M.remove(d);
+        if(Directors.containsKey(d))
+            Directors.remove(d);
+        if(D_M.containsKey(d))
+            D_M.remove(d);
         return new ResponseEntity<>("Deleted All Directors & their Movies",HttpStatus.OK);
     }
 
