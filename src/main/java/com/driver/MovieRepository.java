@@ -47,11 +47,12 @@ public class MovieRepository {
     }
 
     public ResponseEntity<List<String>> getMovieList(String d) {
+//        System.out.println(D_M);
         return new ResponseEntity<>(D_M.get(d),HttpStatus.OK);
     }
 
-    public ResponseEntity<List<Movie>> getallMovies() {
-        return new ResponseEntity<>(new ArrayList<>(Movies.values()),HttpStatus.OK);
+    public ResponseEntity<List<String>> getallMovies() {
+        return new ResponseEntity<>(new ArrayList<>(Movies.keySet()),HttpStatus.OK);
     }
 
     public ResponseEntity<String> dltDirector(String d) {
@@ -59,10 +60,7 @@ public class MovieRepository {
             if(Movies.containsKey(m))
                 Movies.remove(m);
         }
-//        if(Directors.containsKey(d))
-//            Directors.remove(d);
-//        if(D_M.containsKey(d))
-//            D_M.remove(d);
+        D_M.remove(d);
         return new ResponseEntity<>("Deleted All Directors & their Movies",HttpStatus.OK);
     }
 

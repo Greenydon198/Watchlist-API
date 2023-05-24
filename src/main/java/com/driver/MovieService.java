@@ -33,7 +33,7 @@ public class MovieService {
         return mr.getMovieList(d);
     }
 
-    public ResponseEntity<List<Movie>> getallMovies() {
+    public ResponseEntity<List<String>> getallMovies() {
         return mr.getallMovies();
     }
 
