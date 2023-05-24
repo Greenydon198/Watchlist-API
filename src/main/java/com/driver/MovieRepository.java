@@ -21,12 +21,12 @@ public class MovieRepository {
 
     public ResponseEntity<String> addmovie(Movie m) {
         Movies.put(m.getName(),m);
-        return new ResponseEntity<>("Movie Added Sucessfully", HttpStatus.ACCEPTED);
+        return new ResponseEntity<>("Movie Added Successfully", HttpStatus.ACCEPTED);
     }
 
     public ResponseEntity<String> addDirector(Director d) {
         Directors.put(d.getName(),d);
-        return new ResponseEntity<>("Director Added Sucessfully", HttpStatus.ACCEPTED);
+        return new ResponseEntity<>("Director Added Successfully", HttpStatus.ACCEPTED);
     }
 
     public ResponseEntity<String> pair(String m, String d) {
@@ -38,8 +38,8 @@ public class MovieRepository {
         return new ResponseEntity<>("Success",HttpStatus.CREATED);
     }
 
-    public ResponseEntity<Movie> getMovie(String m) {
-        return new ResponseEntity<>(Movies.get(m),HttpStatus.OK);
+    public Movie getMovie(String m) {
+        return Movies.get(m);
     }
 
     public ResponseEntity<Director> getDirector(String d) {

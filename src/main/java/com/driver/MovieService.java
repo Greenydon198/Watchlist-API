@@ -21,7 +21,7 @@ public class MovieService {
         return mr.pair(m,d);
     }
 
-    public ResponseEntity<Movie> getMovie(String m) {
+    public Movie getMovie(String m) {
         return mr.getMovie(m);
     }
 
