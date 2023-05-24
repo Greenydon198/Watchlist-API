@@ -59,10 +59,10 @@ public class MovieRepository {
             if(Movies.containsKey(m))
                 Movies.remove(m);
         }
-        if(Directors.containsKey(d))
-            Directors.remove(d);
-        if(D_M.containsKey(d))
-            D_M.remove(d);
+//        if(Directors.containsKey(d))
+//            Directors.remove(d);
+//        if(D_M.containsKey(d))
+//            D_M.remove(d);
         return new ResponseEntity<>("Deleted All Directors & their Movies",HttpStatus.OK);
     }
 
@@ -71,6 +71,8 @@ public class MovieRepository {
         for(String d:D_M.keySet()){
             dltDirector(d);
         }
+        D_M = new HashMap<>();
+        Directors = new HashMap<>();
         return new ResponseEntity<>("Deleted All Directors & their Movies",HttpStatus.OK);
     }
 }

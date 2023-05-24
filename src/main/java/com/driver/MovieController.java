@@ -31,22 +31,22 @@ public class MovieController {
     }
 
     //4
-    @GetMapping("/get-movie-by-name/{m}")
-    public ResponseEntity<Movie> getMovieByName(@PathVariable String m){
-        Movie movie =  ms.getMovie(m);
+    @GetMapping("/get-movie-by-name/{name}")
+    public ResponseEntity<Movie> getMovieByName(@PathVariable String name){
+        Movie movie =  ms.getMovie(name);
         return new ResponseEntity<>(movie, HttpStatus.OK);
     }
 
     //5
-    @GetMapping("/get-director-by-name/{d}")
-    public ResponseEntity<Director> getDirectorByName(@PathVariable String d){
-        return ms.getDirector(d);
+    @GetMapping("/get-director-by-name/{name}")
+    public ResponseEntity<Director> getDirectorByName(@PathVariable String name){
+        return ms.getDirector(name);
     }
 
     //6
-    @GetMapping("/get-movies-by-director-name/{d}")
-    public ResponseEntity<List<String>> getMoviesByDirectorName(@PathVariable String d){
-        return ms.getMovieList(d);
+    @GetMapping("/get-movies-by-director-name/{director}")
+    public ResponseEntity<List<String>> getMoviesByDirectorName(@PathVariable String director){
+        return ms.getMovieList(director);
     }
 
     //7
